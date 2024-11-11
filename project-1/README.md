@@ -2,6 +2,6 @@
 
 This is a sample project for practicing React.
 
-![Project Image](https://raw.githubusercontent.com/AmanKhansili/10-React-Practice-Projects/refs/heads/main/project-1/src/assets/project-1.png)
+![Project Image](https://raw.githubusercontent.com/AmanKhansili/10-React-Practice-Projects/main/project-1/src/assets/project.png)
 
-Design - https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=0-1&t=orp3GQEAXhmtQcgG-0
+Design - [Figma Design](https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=0-1&t=orp3GQEAXhmtQcgG-0)
