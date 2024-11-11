@@ -1,12 +1,15 @@
 import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <h1 className="bg-red-500">Welcome in project-1</h1>
-    </>
+    <div className="body w-full h-screen px-24">
+      <Navbar />
+      <Hero />
+    </div>
   );
 }
 
