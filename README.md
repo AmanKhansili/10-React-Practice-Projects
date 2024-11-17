@@ -4,7 +4,7 @@
 
 Design - https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=0-1&t=orp3GQEAXhmtQcgG-0
 
-=====
+---
 
 # Project 2 - CONTACT US PAGE
 
@@ -12,7 +12,7 @@ Design - https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-P
 
 https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=2-5&t=orp3GQEAXhmtQcgG-0
 
-=====
+---
 
 # Project 3 - Pokémon Website(Complex API Fetch)
 
@@ -34,8 +34,7 @@ This project provides a great opportunity to enhance your React skills while cre
 
 Happy coding! 🎉
 
-=====
-
+---
 
 # Project 4 - DICE GAME
 
