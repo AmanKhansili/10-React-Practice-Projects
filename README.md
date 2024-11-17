@@ -16,7 +16,7 @@ https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?t
 
 # Project 3 - Pokémon Website(Complex API Fetch)
 
-## By following this tutorial, you've learned how to create a fun and interactive Pokémon website using React.js. Here's a summary of what we've covered:
+### By following this tutorial, you've learned how to create a fun and interactive Pokémon website using React.js. Here's a summary of what we've covered:
 
 <img width="1154" alt="image" src="https://raw.githubusercontent.com/AmanKhansili/10-React-Practice-Projects/refs/heads/main/project-3/src/assets/pokemon.png">
 
