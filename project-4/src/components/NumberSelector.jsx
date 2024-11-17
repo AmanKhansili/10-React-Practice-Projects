@@ -7,16 +7,17 @@ const NumberSelector = ({ selectedValue, setSelectedValue }) => {
       <div className="flex gap-5">
         {arr.map((value, index) => (
           <h2
+            isSelected={value === selectedValue}
             key={index}
             className={`border border-black w-14 h-14 font-bold grid place-items-center cursor-pointer 
-            ${selectedValue === value ? "bg-black text-white" : ""}`}
+            ${value === selectedValue ? "bg-black text-white" : ""}`}
             onClick={() => setSelectedValue(value)}
           >
             {value}
           </h2>
         ))}
       </div>
-      <h1 className="font-bold float-end mt-4">Select Number: {selectedValue}</h1>
+      <h1 className="font-bold float-end mt-4">Select Number is : {selectedValue}</h1>
     </div>
   );
 };

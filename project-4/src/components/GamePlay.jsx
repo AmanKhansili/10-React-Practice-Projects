@@ -14,7 +14,7 @@ const GamePlay = () => {
   };
   const handleClick = () => {
     if (!selectedValue) {
-      return setError("Plese first select a number");
+      return setError("You have not selected any number");
     } else {
       setError("");
     }
@@ -27,15 +27,22 @@ const GamePlay = () => {
     } else {
       setScore((prev) => (prev <= 0 ? 0 : prev - 2));
     }
+
+    setSelectedValue(undefined);
   };
 
   return (
     <main className="w-full h-screen">
-      <div className="px-10 flex justify-between items-center">
+      <div className="h-[16%] px-10 flex justify-between items-center">
         <TotalScore score={score} />
         <NumberSelector selectedValue={selectedValue} setSelectedValue={setSelectedValue} />
       </div>
-      <RoleDice currentDice={currentDice} handleClick={handleClick} error={error} />
+      <RoleDice
+        currentDice={currentDice}
+        handleClick={handleClick}
+        error={error}
+        setScore={setScore}
+      />
     </main>
   );
 };
