@@ -1,4 +1,4 @@
-# Project 3 Pokémon Website(Complex API Fetch)
+# Project 3 - Pokémon Website(Complex API Fetch)
 
 ### By following this tutorial, you've learned how to create a fun and interactive Pokémon website using React.js. Here's a summary of what we've covered:
 
