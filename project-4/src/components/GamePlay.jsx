@@ -32,10 +32,13 @@ const GamePlay = () => {
   };
 
   return (
-    <main className="w-full h-screen">
-      <div className="h-[16%] px-10 flex justify-between items-center">
+    <main className="h-screen w-full">
+      <div className="flex h-[16%] items-center justify-between px-10">
         <TotalScore score={score} />
-        <NumberSelector selectedValue={selectedValue} setSelectedValue={setSelectedValue} />
+        <NumberSelector
+          selectedValue={selectedValue}
+          setSelectedValue={setSelectedValue}
+        />
       </div>
       <RoleDice
         currentDice={currentDice}

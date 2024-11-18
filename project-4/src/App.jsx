@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="w-full h-screen">
+    <div className="h-screen w-full">
       <StartGame />
     </div>
   );

@@ -5,15 +5,15 @@ const StartGame = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-full flex justify-center items-center gap-5">
+    <div className="flex h-full items-center justify-center gap-5">
       <div className="img">
         <img src="/images/dices.png" alt="dice" />
       </div>
       <div className="text">
-        <h1 className="font-bold text-8xl">DICE GAME</h1>
-        
+        <h1 className="text-8xl font-bold">DICE GAME</h1>
+
         <motion.button
-          className="bg-black text-white font-bold px-16 py-2 mt-5 float-end border-2 rounded-md"
+          className="float-end mt-5 rounded-md border-2 bg-black px-16 py-2 font-bold text-white"
           onClick={() => navigate("/game")}
           whileHover={{
             scale: 1.1,

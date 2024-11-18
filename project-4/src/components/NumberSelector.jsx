@@ -9,15 +9,16 @@ const NumberSelector = ({ selectedValue, setSelectedValue }) => {
           <h2
             isSelected={value === selectedValue}
             key={index}
-            className={`border border-black w-14 h-14 font-bold grid place-items-center cursor-pointer 
-            ${value === selectedValue ? "bg-black text-white" : ""}`}
+            className={`grid h-14 w-14 cursor-pointer place-items-center border border-black font-bold ${value === selectedValue ? "bg-black text-white" : ""}`}
             onClick={() => setSelectedValue(value)}
           >
             {value}
           </h2>
         ))}
       </div>
-      <h1 className="font-bold float-end mt-4">Select Number is : {selectedValue}</h1>
+      <h1 className="float-end mt-4 font-bold">
+        Select Number is : {selectedValue}
+      </h1>
     </div>
   );
 };
