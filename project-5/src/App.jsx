@@ -10,6 +10,7 @@ import AddAndUpdateContact from "./components/AddAndUpdateContact";
 import useDisclouse from "./hooks/useDisclouse";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NotFoundContact from "./components/NotFoundContact";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -36,6 +37,25 @@ function App() {
     getContacts();
   }, []);
 
+  const fillterContacts = (e) => {
+    const value = e.target.value;
+
+    const contactsRef = collection(db, "contacts");
+
+    onSnapshot(contactsRef, (snapshot) => {
+      const contactList = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      const fillterdContacts = contactList.filter((contact) =>
+        contact.name.toLowerCase().includes(value.toLowerCase()),
+      );
+
+      setContacts(fillterdContacts);
+      return fillterContacts;
+    });
+  };
   return (
     <>
       <div className="mx-auto max-w-[370px] px-4">
@@ -44,6 +64,7 @@ function App() {
           <div className="relative flex flex-grow items-center">
             <FiSearch className="absolute ml-1 text-3xl text-white" />
             <input
+              onChange={fillterContacts}
               type="text"
               className="h-10 flex-grow rounded-md border border-white bg-transparent pl-9 text-white"
             />
@@ -55,13 +76,17 @@ function App() {
         </div>
 
         <div className="mt-4">
-          {contacts.map((contact) => (
-            <ContactCard key={contact.id} contact={contact} />
-          ))}
+          {contacts.length <= 0 ? (
+            <NotFoundContact />
+          ) : (
+            contacts.map((contact) => (
+              <ContactCard key={contact.id} contact={contact} />
+            ))
+          )}
         </div>
       </div>
       <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
-      <ToastContainer  position="bottom-center"/>
+      <ToastContainer position="bottom-center" />
     </>
   );
 }
