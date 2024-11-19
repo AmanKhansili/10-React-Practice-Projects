@@ -3,34 +3,32 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { FiSearch } from "react-icons/fi";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 import ContactCard from "./components/ContactCard";
-import Modal from "./components/Modal";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
+import useDisclouse from "./hooks/useDisclouse";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [contacts, setContacts] = useState([]);
 
-  const [isOpen, setOpen] = useState(false);
-
-  const onOpen = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
+  const { onClose, onOpen, isOpen } = useDisclouse();
 
   useEffect(() => {
     const getContacts = async () => {
       try {
         const contactsRef = collection(db, "contacts");
-        const contactsSnapshot = await getDocs(contactsRef);
-        const contactList = contactsSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setContacts(contactList);
+
+        onSnapshot(contactsRef, (snapshot) => {
+          const contactList = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setContacts(contactList);
+          return contactList;
+        });
       } catch (error) {
         console.error("Error fetching contacts:", error);
       }
@@ -63,6 +61,7 @@ function App() {
         </div>
       </div>
       <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
+      <ToastContainer  position="bottom-center"/>
     </>
   );
 }
